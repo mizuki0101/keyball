@@ -66,7 +66,7 @@ layer_state_t layer_state_set_user(layer_state_t state) {
 
         // checks highest layer other than target layer
     switch(get_highest_layer(remove_auto_mouse_layer(state, true))) {
-        case ACT_LAYER3:
+        case 3:
             // remove_auto_mouse_target must be called to adjust state *before* setting enable
             state = remove_auto_mouse_layer(state, false);
             set_auto_mouse_enable(false);
