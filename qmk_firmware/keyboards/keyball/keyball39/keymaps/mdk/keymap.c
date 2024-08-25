@@ -25,7 +25,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // keymap for default (VIA)
   [0] = LAYOUT_universal(
     C_S_T(KC_Q)     , KC_W     , KC_E     , KC_R     , KC_T     ,                            KC_Y     , KC_U     , KC_I     , KC_O     , C_S_T(KC_P)     ,
-    LCTL_T(KC_A)     , KC_S     , KC_D     , LT(3,KC_F)     , KC_G     ,                            KC_H     , KC_J     , KC_K     , KC_L     , KC_BSPC  ,
+    LCTL_T(KC_A)     , KC_S     , KC_D     , LT(3,KC_F)     , KC_G     ,                            KC_H     , LALT(KC_J)     , KC_K     , KC_L     , KC_BSPC  ,
     LSFT_T(KC_Z)     , KC_X     , KC_C     , KC_V     , KC_B     ,                            KC_N     , LT(2,KC_M)     , KC_BTN1  , KC_BTN2   , KC_SLSH  ,
     KC_LCTL  , KC_LALT  , KC_LGUI  ,LT(1,KC_TAB),LT(2,KC_SPC),LT(3,KC_ESCAPE), _______  , _______  , _______  ,KC_RALT,KC_ENT, KC_RSFT
   ),
@@ -110,7 +110,7 @@ void pointing_device_init_user(void) {
 //     #endif
 
 #ifdef COMBO_ENABLE
-const uint16_t PROGMEM esc_combo1[] = {KC_J, KC_K, COMBO_END};
+const uint16_t PROGMEM esc_combo1[] = {LALT(KC_J), KC_K, COMBO_END};
 const uint16_t PROGMEM test_combo2[] = {KC_C, KC_D, COMBO_END};
 combo_t key_combos[] = {
     COMBO(esc_combo1, KC_ESC),
