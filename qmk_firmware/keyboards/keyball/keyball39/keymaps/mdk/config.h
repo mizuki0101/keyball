@@ -31,7 +31,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // //#    define RGBLIGHT_EFFECT_RGB_TEST
 // //#    define RGBLIGHT_EFFECT_ALTERNATING
 // //#    define RGBLIGHT_EFFECT_TWINKLE
-#endif
+#endifh
 
 #define TAP_CODE_DELAY 5
 
@@ -39,4 +39,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #define POINTING_DEVICE_AUTO_MOUSE_ENABLE
 #define AUTO_MOUSE_DEFAULT_LAYER 4
-#define AUTO_MOUSE_TIME 200               // Automatic Mouse Layer で元のレイヤーに戻るまでの時間
+#define AUTO_MOUSE_TIME 250
+#define AUTO_MOUSE_THRESHOLD 50
+               // Automatic Mouse Layer で元のレイヤーに戻るまでの時間
