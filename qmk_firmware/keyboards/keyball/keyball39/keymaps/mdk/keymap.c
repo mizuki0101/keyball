@@ -65,7 +65,6 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     keyball_set_scroll_mode(get_highest_layer(state) == 3);
 
         // checks highest layer other than target layer
-    #ifdef POINTING_DEVICE_AUTO_MOUSE_ENABLE
     switch(get_highest_layer(remove_auto_mouse_layer(state, true))) {
         case 3:
             // remove_auto_mouse_target must be called to adjust state *before* setting enable
@@ -76,7 +75,6 @@ layer_state_t layer_state_set_user(layer_state_t state) {
             set_auto_mouse_enable(true);
             break;
     }
-    #endif
     
     return state;
 }
@@ -93,11 +91,11 @@ void oledkit_render_info_user(void) {
 #endif
 
 
-// #ifdef POINTING_DEVICE_AUTO_MOUSE_ENABLE
-// void pointing_device_init_user(void) {
-//     set_auto_mouse_enable(true);
-// }
-// #endif
+#ifdef POINTING_DEVICE_AUTO_MOUSE_ENABLE
+void pointing_device_init_user(void) {
+    set_auto_mouse_enable(true);
+}
+#endif
 
 // #ifdef POINTING_DEVICE_AUTO_MOUSE_ENABLE
 //     switch(get_highest_layer(remove_auto_mouse_layer(state, true))) {
