@@ -109,8 +109,11 @@ void pointing_device_init_user(void) {
 //     }
 //     #endif
 
+#ifdef COMBO_ENABLE
 const uint16_t PROGMEM esc_combo1[] = {KC_J, KC_K, COMBO_END};
 const uint16_t PROGMEM test_combo2[] = {KC_C, KC_D, COMBO_END};
 combo_t key_combos[] = {
     COMBO(esc_combo1, KC_ESC),
+    COMBO(test_combo2, KC_TAB),
 };
+#endif
