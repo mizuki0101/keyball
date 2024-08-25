@@ -72,7 +72,7 @@ layer_state_t layer_state_set_user(layer_state_t state) {
             set_auto_mouse_enable(false);
             break;
         default:
-            set_auto_mouse_enable(true);
+            set_auto_mouse_enable(false);
             break;
     }
     
