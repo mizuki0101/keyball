@@ -35,10 +35,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             tap_code(KC_GRAVE);
             unregister_code(KC_LALT);
     }
-    break;
+        break;
     }
     return true;
-}
+};
 
 
 // clang-format off
