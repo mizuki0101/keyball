@@ -19,6 +19,28 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include QMK_KEYBOARD_H
 
 #include "quantum.h"
+
+// macro define
+enum custom_keycodes {
+    QMKBEST = SAFE_RANGE,
+    LANG_CHANGE,
+    SHIFT_END,
+};
+
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    swich (keycode) {
+    case LANG_CHANGE:
+        if (record->event.pressed) {
+            register_code(KC_LALT);
+            tap_code(KC_GRAVE);
+            unregister_code(KC_LALT);
+    }
+    break;
+    }
+    return true;
+}
+
+
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // keymap for default (VIA)
@@ -116,24 +138,3 @@ combo_t key_combos[] = {
     COMBO(del_combo2, KC_DEL),
 };
 #endif
-
-
-// macro define
-enum custom_keycodes {
-    QMKBEST = SAFE_RANGE,
-    LANG_CHANGE,
-    SHIFT_END,
-};
-
-bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-    swich (keycode) {
-    case LANG_CHANGE:
-        if (record->event.pressed) {
-            register_code(KC_LALT);
-            tap_code(KC_GRAVE);
-            unregister_code(KC_LALT);
-    }
-    break;
-    }
-    return true;
-}
