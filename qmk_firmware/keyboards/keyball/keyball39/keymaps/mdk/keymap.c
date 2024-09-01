@@ -22,22 +22,22 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 // macro define
 enum custom_keycodes {
-    QMKBEST = SAFE_RANGE,
-    LANG_CHANGE,
-    SHIFT_END,
+  QMKBEST = SAFE_RANGE,
+  LANG_CHANGE,
+  SHIFT_END,
 };
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-    swich (keycode) {
-    case LANG_CHANGE:
-        if (record->event.pressed) {
-            register_code(KC_LALT);
-            tap_code(KC_GRAVE);
-            unregister_code(KC_LALT);
+  switch (keycode) {
+  case LANG_CHANGE:
+    if (record->event.pressed) {
+      register_code(KC_LALT);
+      tap_code(KC_GRAVE);
+      unregister_code(KC_LALT);
     }
-        break;
-    }
-    return true;
+    break;
+  }
+  return true;
 };
 
 
