@@ -19,7 +19,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include QMK_KEYBOARD_H
 
 #include "quantum.h"
-
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // keymap for default (VIA)
@@ -27,7 +26,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     C_S_T(KC_Q)     , KC_W     , KC_E     , KC_R     , KC_T     ,                            KC_Y     , KC_U     , KC_I     , KC_O     , C_S_T(KC_P)     ,
     LCTL_T(KC_A)     , KC_S     , KC_D     , LT(3,KC_F)     , KC_G     ,                            KC_H     , LALT_T(KC_J)     , KC_K     , KC_L     ,LCTL_T(KC_BSPC)  ,
     LSFT_T(KC_Z)     , KC_X     , KC_C     , KC_V     , KC_B     ,                            KC_N     , LT(3,KC_M)     , KC_BTN1  , KC_BTN2   , KC_COMMA  ,
-    KC_LCTL  , KC_LALT  , KC_LGUI  ,LT(1,KC_TAB),LT(2,KC_SPC),LT(3,KC_ESCAPE), KC_RALT  , KC_ENT  , _______  ,_______,_______, LSFT_T(KC_DOT)
+    KC_LCTL  , KC_LALT  , KC_LGUI  ,LT(1,KC_TAB),LT(2,KC_SPC),LT(3,KC_ESCAPE), LANG_CHANGE  , KC_ENT  , _______  ,_______,_______, LSFT_T(KC_DOT)
   ),
 
   [1] = LAYOUT_universal(
@@ -117,3 +116,24 @@ combo_t key_combos[] = {
     COMBO(del_combo2, KC_DEL),
 };
 #endif
+
+
+// macro define
+enum custom_keycodes {
+    QMKBEST = SAFE_RANGE,
+    LANG_CHANGE,
+    SHIFT_END,
+};
+
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    swich (keycode) {
+    case LANG_CHANGE:
+        if (record->event.pressed) {
+            register_code(KC_LALT);
+            tap_code(KC_GRAVE);
+            unregister_code(KC_LALT);
+    }
+    break;
+    }
+    return true;
+}
