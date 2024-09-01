@@ -26,13 +26,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_universal(
     C_S_T(KC_Q)     , KC_W     , KC_E     , KC_R     , KC_T     ,                            KC_Y     , KC_U     , KC_I     , KC_O     , C_S_T(KC_P)     ,
     LCTL_T(KC_A)     , KC_S     , KC_D     , LT(3,KC_F)     , KC_G     ,                            KC_H     , LALT_T(KC_J)     , KC_K     , KC_L     ,LCTL_T(KC_BSPC)  ,
-    LSFT_T(KC_Z)     , KC_X     , KC_C     , KC_V     , KC_B     ,                            KC_N     , LT(2,KC_M)     , KC_BTN1  , KC_BTN2   , KC_SLSH  ,
+    LSFT_T(KC_Z)     , KC_X     , KC_C     , KC_V     , KC_B     ,                            KC_N     , LT(3,KC_M)     , KC_BTN1  , KC_BTN2   , KC_SLSH  ,
     KC_LCTL  , KC_LALT  , KC_LGUI  ,LT(1,KC_TAB),LT(2,KC_SPC),LT(3,KC_ESCAPE), _______  , _______  , _______  ,KC_RALT,KC_ENT, KC_RSFT
   ),
 
   [1] = LAYOUT_universal(
-    KC_F1    , KC_F2    , KC_F3    , KC_F4    , KC_RBRC  ,                            KC_F6    , KC_F7    , KC_F8    , KC_F9    , KC_F10   ,
-    KC_F5    , KC_EXLM  , S(KC_6)  ,S(KC_INT3), S(KC_8)  ,                           S(KC_INT1), KC_BTN1  , KC_PGUP  , KC_BTN2  , KC_SCLN  ,
+    KC_EXCLAIM    , KC_AT    ,  KC_HASH   , KC_DOLLAR    , KC_PERCENT  ,                            KC_F6    , KC_F7    , KC_F8    , KC_F9    , KC_F10   ,
+    KC_LCBR    , KC_RCBR  , KC_BACKSLASH  , KC_MINUS , S(KC_8)  ,                           S(KC_INT1), KC_BTN1  , KC_PGUP  , KC_BTN2  , KC_SCLN  ,
     S(KC_EQL),S(KC_LBRC),S(KC_7)   , S(KC_2)  ,S(KC_RBRC),                            KC_LBRC  , KC_DLR   , KC_PGDN  , KC_BTN3  , KC_F11   ,
     KC_INT1  , KC_EQL   , S(KC_3)  , _______  , _______  , _______  ,      TO(2)    , TO(0)    , _______  , KC_RALT  , KC_RGUI  , KC_F12
   ),
