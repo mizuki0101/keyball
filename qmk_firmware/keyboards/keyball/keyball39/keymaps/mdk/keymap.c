@@ -24,7 +24,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 enum custom_keycodes {
   QMKBEST = SAFE_RANGE,
   LANG_CHANGE,
-  QMKURL,
+  SHIFT_END,
+  SHIFT_HOME,
 };
 
 // bool process_record_user(uint16_t keycode, keyrecord_t *record) {
@@ -60,10 +61,18 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             // when keycode QMKBEST is released
         }
         break;
-    case QMKURL:
+    case SHIFT_END:
         if (record->event.pressed) {
             // when keycode QMKURL is pressed
-            SEND_STRING("https://qmk.fm/\n");
+            SEND_STRING(SS_LSFT(X_END));
+        } else {
+            // when keycode QMKURL is released
+        }
+        break;
+    case SHIFT_HOME:
+        if (record->event.pressed) {
+            // when keycode QMKURL is pressed
+            SEND_STRING(SS_LSFT(X_HOME));
         } else {
             // when keycode QMKURL is released
         }
@@ -92,13 +101,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [2] = LAYOUT_universal(
     C_S_T(CPI_D1K)   , CPI_D100     , CPI_I100     , CPI_I1K     , _______  ,                 S(KC_8)  , KC_7  , KC_8  , KC_9  , KC_MINUS  ,
-    KC_LCTL  , _______     , _______     , KC_BTN3     , QMKURL ,                            KC_SLASH , KC_4  , KC_5  , KC_6  , S(KC_EQUAL)  ,
-    AML_TO  , _______     , _______     , KC_E    , (QMKURL) ,                              KC_0     , KC_1  , KC_2  , KC_3  , KC_EQUAL  ,
+    KC_LCTL  , _______     , _______     , KC_BTN3     , _______  ,                            KC_SLASH , KC_4  , KC_5  , KC_6  , S(KC_EQUAL)  ,
+    AML_TO  , _______     , _______     , _______    , _______  ,                              KC_0     , KC_1  , KC_2  , KC_3  , KC_EQUAL  ,
     _______   , _______     , _______   , _______   , _______   , _______  ,      S(KC_SEMICOLON)  , KC_DOT  , _______  , _______  , _______  , _______
   ),
 
   [3] = LAYOUT_universal(
-    KC_F11  , KC_F12 , _______  , _______  , _______  ,                            _______  , _______  , _______  , _______ , _______ ,
+    KC_F11  , KC_F12 , _______  , _______  , _______  ,                            _______  , (SHIFT_HOME)  , (SHIFT_END)  , _______ , _______ ,
     KC_F6   , KC_F7  , LSFT_T(KC_F8)  , KC_F9  , KC_F10 ,                          KC_LEFT  , KC_DOWN  , KC_UP    , KC_RIGHT  , _______  ,
     KC_F1   , KC_F2  , KC_F3  , KC_F4  , KC_F5 ,                                   KC_HOME  , KC_PGDN  , KC_PGUP  , KC_END  , _______ ,
     _______  , _______  , _______  , _______  , _______  , _______  ,      _______  , _______  , _______  , _______  , _______  , _______
