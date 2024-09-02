@@ -27,18 +27,40 @@ enum custom_keycodes {
   QMKURL,
 };
 
+// bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+//   switch (keycode) {
+//   case LANG_CHANGE:
+//     if (record->event.pressed) {
+//       register_code(KC_LALT);
+//       tap_code(KC_GRAVE);
+//       unregister_code(KC_LALT);
+//     } else {
+//             // when keycode QMKBEST is released
+//         }
+//     break;
+//   case QMKURL:
+//         if (record->event.pressed) {
+//             // when keycode QMKURL is pressed
+//             SEND_STRING("https://qmk.fm/\n");
+//         } else {
+//             // when keycode QMKURL is released
+//         }
+//         break;
+//   }
+//   return true;
+// };
+
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-  switch (keycode) {
-  case LANG_CHANGE:
-    if (record->event.pressed) {
-      register_code(KC_LALT);
-      tap_code(KC_GRAVE);
-      unregister_code(KC_LALT);
-    } else {
+    switch (keycode) {
+    case LANG_CHANGE:
+        if (record->event.pressed) {
+            // when keycode QMKBEST is pressed
+            SEND_STRING(SS_LALT("`"));
+        } else {
             // when keycode QMKBEST is released
         }
-    break;
-  case QMKURL:
+        break;
+    case QMKURL:
         if (record->event.pressed) {
             // when keycode QMKURL is pressed
             SEND_STRING("https://qmk.fm/\n");
@@ -46,8 +68,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             // when keycode QMKURL is released
         }
         break;
-  }
-  return true;
+    }
+    return true;
 };
 
 
@@ -71,7 +93,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [2] = LAYOUT_universal(
     C_S_T(CPI_D1K)   , CPI_D100     , CPI_I100     , CPI_I1K     , _______  ,                 S(KC_8)  , KC_7  , KC_8  , KC_9  , KC_MINUS  ,
     KC_LCTL  , _______     , _______     , KC_BTN3     , QMKURL ,                            KC_SLASH , KC_4  , KC_5  , KC_6  , S(KC_EQUAL)  ,
-    AML_TO  , _______     , _______     , _______    , (QMKURL) ,                              KC_0     , KC_1  , KC_2  , KC_3  , KC_EQUAL  ,
+    AML_TO  , _______     , _______     , KC_E    , (QMKURL) ,                              KC_0     , KC_1  , KC_2  , KC_3  , KC_EQUAL  ,
     _______   , _______     , _______   , _______   , _______   , _______  ,      S(KC_SEMICOLON)  , KC_DOT  , _______  , _______  , _______  , _______
   ),
 
