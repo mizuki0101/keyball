@@ -33,15 +33,15 @@ jobs:
         keyboard: [ keyball39 ]
         # keymap: [ test, default, via ]
         keymap: [ mdk ]
-        include:
-          - keyboard: keyball46
-            keymap:   test_Left
-          - keyboard: keyball46
-            keymap:   test_Both
-          - keyboard: keyball46
-            keymap:   via_Left
-          - keyboard: keyball46
-            keymap:   via_Both
+        # include:
+        #   - keyboard: keyball46
+        #     keymap:   test_Left
+        #   - keyboard: keyball46
+        #     keymap:   test_Both
+        #   - keyboard: keyball46
+        #     keymap:   via_Left
+        #   - keyboard: keyball46
+        #     keymap:   via_Both
 
     uses: ./.github/workflows/build-firmware.yml
     with:
