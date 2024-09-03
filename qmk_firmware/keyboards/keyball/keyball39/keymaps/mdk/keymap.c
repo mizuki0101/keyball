@@ -97,8 +97,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
   [1] = LAYOUT_universal(
-    C_S_T(S(KC_1))    , S(KC_2)    ,  S(KC_3)   , S(KC_4)    , S(KC_5)  ,                            S(KC_6)      , S(KC_7)       , S(KC_8)    , S(KC_9)    , S(KC_0)   ,
-    LCTL_T(S(KC_LBRC))    , S(KC_RBRC)  , KC_BACKSLASH  , KC_MINUS , KC_EQUAL  ,              KC_QUOTE     , KC_SEMICOLON  , KC_SLASH  , KC_LBRC  , KC_RBRC  ,
+    S(KC_1)    , S(KC_2)    ,  S(KC_3)   , S(KC_4)    , S(KC_5)  ,                            S(KC_6)      , S(KC_7)       , S(KC_8)    , S(KC_9)    , S(KC_0)   ,
+    S(KC_LBRC)    , S(KC_RBRC)  , KC_BACKSLASH  , KC_MINUS , KC_EQUAL  ,              KC_QUOTE     , KC_SEMICOLON  , KC_SLASH  , KC_LBRC  , KC_RBRC  ,
     S(KC_GRAVE), KC_GRAVE ,S(KC_BACKSLASH)   , S(KC_MINUS)  ,S(KC_EQUAL),                     S(KC_QUOTE)  , S(KC_SEMICOLON)   , S(KC_COMMA)  , S(KC_DOT)  , S(KC_SLASH)   ,
     _______  , _______   , _______  , _______  , _______  , _______  ,      _______    , _______    , _______  , _______  , _______  , _______
   ),
