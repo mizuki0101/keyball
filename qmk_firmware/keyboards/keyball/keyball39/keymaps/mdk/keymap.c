@@ -62,16 +62,16 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }
         break;
 
-    case SHIFT_END:
-        if (record->event.pressed) {
-            // when keycode QMKURL is pressed
-          register_code(KC_LSFT);
-          tap_code(KC_END);
-        } else {
-            // when keycode QMKURL is released
-          unregister_code(KC_LSFT);
-        }
-        break;
+    // case SHIFT_END:
+    //     if (record->event.pressed) {
+    //         // when keycode QMKURL is pressed
+    //       register_code(KC_LSFT);
+    //       tap_code(KC_END);
+    //     } else {
+    //         // when keycode QMKURL is released
+    //       unregister_code(KC_LSFT);
+    //     }
+    //     break;
 
     // case SHIFT_HOME:
     //     if (record->event.pressed) {
