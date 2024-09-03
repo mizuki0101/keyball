@@ -67,9 +67,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             // when keycode QMKURL is pressed
           register_code(KC_LSFT);
           tap_code(KC_END);
-          unregister_code(KC_LSFT);
         } else {
             // when keycode QMKURL is released
+          unregister_code(KC_LSFT);
         }
         break;
 
@@ -111,7 +111,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
   [3] = LAYOUT_universal(
-    KC_F11  , KC_F12 , _______  , _______  , _______  ,                            _______  , (SHIFT_HOME)  , (SHIFT_END)  , _______ , _______ ,
+    KC_F11  , KC_F12 , _______  , _______  , _______  ,                            _______  , _______  , (SHIFT_END)  , _______ , _______ ,
     KC_F6   , KC_F7  , LSFT_T(KC_F8)  , KC_F9  , KC_F10 ,                          KC_LEFT  , KC_DOWN  , KC_UP    , KC_RIGHT  , _______  ,
     KC_F1   , KC_F2  , KC_F3  , KC_F4  , KC_F5 ,                                   KC_HOME  , KC_PGDN  , KC_PGUP  , KC_END  , _______ ,
     _______  , _______  , _______  , _______  , _______  , _______  ,      _______  , _______  , _______  , _______  , _______  , _______
