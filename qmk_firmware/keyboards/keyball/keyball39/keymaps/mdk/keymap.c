@@ -65,7 +65,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case SHIFT_END:
         if (record->event.pressed) {
             // when keycode QMKURL is pressed
-            SEND_STRING(SS_LSFT(X_END));
+          register_code(KC_LSFT);
+          tap_code(KC_END);
+          unregister_code(KC_LSF);
         } else {
             // when keycode QMKURL is released
         }
