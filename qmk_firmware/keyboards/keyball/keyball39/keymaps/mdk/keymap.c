@@ -67,7 +67,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             // when keycode QMKURL is pressed
           register_code(KC_LSFT);
           tap_code(KC_END);
-          unregister_code(KC_LSF);
+          unregister_code(KC_LSFT);
         } else {
             // when keycode QMKURL is released
         }
