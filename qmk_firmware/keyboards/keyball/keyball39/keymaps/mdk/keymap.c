@@ -111,7 +111,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
   [3] = LAYOUT_universal(
-    KC_F11  , KC_F12 , _______  , _______  , _______  ,                            _______  , _______  , (SHIFT_END)  , _______ , _______ ,
+    KC_F11  , KC_F12 , _______  , _______  , _______  ,                            _______  , _______  , _______  , _______ , _______ ,
     KC_F6   , KC_F7  , LSFT_T(KC_F8)  , KC_F9  , KC_F10 ,                          KC_LEFT  , KC_DOWN  , KC_UP    , KC_RIGHT  , _______  ,
     KC_F1   , KC_F2  , KC_F3  , KC_F4  , KC_F5 ,                                   KC_HOME  , KC_PGDN  , KC_PGUP  , KC_END  , _______ ,
     _______  , _______  , _______  , _______  , _______  , _______  ,      _______  , _______  , _______  , _______  , _______  , _______
