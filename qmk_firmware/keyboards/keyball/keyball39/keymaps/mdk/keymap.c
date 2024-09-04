@@ -91,7 +91,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // keymap for default (VIA)
   [0] = LAYOUT_universal(
     C_S_T(KC_Q)     , KC_W     , KC_E     , KC_R     , KC_T     ,                            KC_Y     , KC_U     , KC_I     , KC_O     , C_S_T(KC_P)     ,
-    LCTL_T(KC_A)     , KC_S     , KC_D     , LT(3,KC_F)     , KC_G     ,                            KC_H     , LALT_T(KC_J)     , KC_K     , KC_L     ,LCTL_T(KC_BSPC)  ,
+    LCTL_T(KC_A)     , C_S_T(KC_S)     , KC_D     , LT(3,KC_F)     , KC_G     ,                            KC_H     , LALT_T(KC_J)     , KC_K     , C_S_T(KC_L)     ,LCTL_T(KC_BSPC)  ,
     LSFT_T(KC_Z)     , KC_X     , KC_C     , KC_V     , KC_B     ,                            KC_N     , LT(3,KC_M)     , KC_BTN1  , KC_BTN2   , KC_COMMA  ,
     KC_LCTL  , KC_LALT  , KC_LGUI  ,LT(1,KC_TAB),LT(2,KC_SPC),LT(3,KC_ESCAPE), (LANG_CHANGE)  , KC_ENT  , _______  ,_______,_______, LSFT_T(KC_DOT)
   ),
