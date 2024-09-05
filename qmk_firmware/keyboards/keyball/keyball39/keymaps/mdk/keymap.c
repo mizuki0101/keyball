@@ -177,7 +177,7 @@ void pointing_device_init_user(void) {
 
 #ifdef COMBO_ENABLE
 const uint16_t PROGMEM esc_combo1[] = {LALT_T(KC_J), KC_K, COMBO_END};
-const uint16_t PROGMEM del_combo2[] = {KC_L, LCTL_T(KC_BSPC), COMBO_END};
+const uint16_t PROGMEM del_combo2[] = {C_S_T(KC_L), LCTL_T(KC_BSPC), COMBO_END};
 combo_t key_combos[] = {
     COMBO(esc_combo1, KC_ESC),
     COMBO(del_combo2, KC_DEL),
